@@ -1,7 +1,7 @@
 import threading
 from queue import Queue
 
-semaphore = threading.Semaphore()
+lock = threading.Lock()
 q = Queue()
 final_results = []
  
@@ -12,9 +12,9 @@ def producer():
  
 def consumer():
     while True:
-        semaphore.acquire() #use semaphore to prevent race condition
+        lock.acquire(blocking = False) #use lock to prevent race condition
         number = q.get()
-        semaphore.release() #release semaphore allowing queue qccess to other threads
+        lock.release() #release lock allowing queue access to other threads
         result = (number, number**2)
         final_results.append(result)
         q.task_done()
