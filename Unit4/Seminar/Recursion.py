@@ -126,10 +126,10 @@ while True:
          number_of_disks = int(input("Enter number of disks: "))
      except:
          print("You must enter a valid whole number.")
-     if number_of_disks <= 999999999:
+     if number_of_disks <= 984 and number_of_disks >= 0:
          break
      else:
-         print("Use a smaller number.")
+         print("Use a number in the range 0-984.")
 
 initialize(number_of_disks)
 print("DONE!")
