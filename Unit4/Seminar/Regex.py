@@ -1,10 +1,14 @@
 import re
 
-post_code = "SW1A 2AA"
-
 pattern = r"[A-Z][A-Z0-9]{0,3} [0-9][A-Z]{2}"
 
-test = "ST7 9HV"
-
-find = re.findall(pattern, test)
-print(find)
+while True:
+    post_code_entry = input("Enter a UK postcode.")
+    find = re.findall(pattern, post_code_entry)
+    if len(find) == 1:
+        if find[0] == post_code_entry:
+            print("Correct!")
+        else:
+            print("Wrong!")
+    else:
+        print("Wrong!")
