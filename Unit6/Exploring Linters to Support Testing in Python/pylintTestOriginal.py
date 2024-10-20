@@ -23,4 +23,4 @@ if choice == "encode":
           x = letters.index(letter) - shift
           encoded = encoded + letters[x]
 
-print (encoded)
+print encoded
